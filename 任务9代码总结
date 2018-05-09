@@ -1,0 +1,116 @@
+1.圆和同心圆环：
+          <div class="sidebar__user__baseinfo__avatar">
+            <div></div>   
+          </div>
+.sidebar__user__baseinfo__avatar {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  background-color: #b8b8bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar__user__baseinfo__avatar div {
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  border: 6px solid #2d323f;
+  background-color: #b8b8bc;
+注意：border 未设置宽度属性时为圆，设置宽度属性为双色同心圆
+2.折叠文档：
+       <div class="sidebar__menulist">
+        <div class="sidebar__menulist__menu" id="reports">
+          <i class="fa fa-files-o"></i>
+          <span class="menuname">个人报表</span>
+          <div class="sidebar__menulist__menu-mask">
+            <div class="sidebar__menulist__menu children">
+              <i class="fa fa-angle-right"></i>
+              <i class="fa fa-file"></i>
+              <span class="menuname">文件1</span>
+            </div>
+            <div class="sidebar__menulist__menu children" id="dir2">
+              <i class="fa fa-angle-right"></i>
+              <i class="fa fa-file"></i>
+              <span class="menuname">文件2</span>
+              <div class="sidebar__menulist__menu-mask">
+                <a href="#content_file1" class="sidebar__menulist__menu children" id="file1">
+                  <i class="fa fa-angle-right"></i>
+                  <i class="fa fa-file"></i>
+                  <span class="menuname">文档1</span>
+                </a>
+                <a href="#content_file2" class="sidebar__menulist__menu children" id="file2">
+                  <i class="fa fa-angle-right"></i>
+                  <i class="fa fa-file"></i>
+                  <span class="menuname">文档2</span>
+                </a>
+              </div>
+            </div>
+            <div class="sidebar__menulist__menu children">
+              <i class="fa fa-angle-right"></i>
+              <i class="fa fa-file"></i>
+              <span class="menuname">文件3</span>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="sidebar__menulist__menu">
+          <i class="fa fa-star"></i>
+          <span class="menuname">个人收藏</span>
+        </a>
+        <a href="#" class="sidebar__menulist__menu">
+          <i class="fa fa-share-alt"></i>
+          <span class="menuname">我的分享</span>
+        </a>
+        <a href="#" class="sidebar__menulist__menu">
+          <i class="fa fa-star"></i>
+          <span class="menuname">图库</span>
+        </a>
+        <a href="#" class="sidebar__menulist__menu">
+          <i class="fa fa-star"></i>
+          <span class="menuname">成长记录</span>
+        </a>
+        <a href="#" class="sidebar__menulist__menu">
+          <i class="fa fa-star"></i>
+          <span class="menuname">账户信息</span>
+        </a>
+      </div>
+    </div>        
+.sidebar__menulist {
+  margin-top: 40px;
+  font-size: 15px;
+}
+.sidebar__menulist__menu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 45px;
+  color: #6a7e92;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  outline: 0;
+  background-color: transparent;
+  border: 0;
+  text-align: left;
+  font-size: 15px;
+  font-weight: unset;
+  transition: all ease 0.5s;
+}
+.sidebar__menulist__menu .children {
+  padding-left: 25px;
+  color: #6a7e92;
+}
+.sidebar__menulist__menu:hover {
+  color: white;
+  background-color: #393e4c;
+}
+#reports:hover, #dir2:hover {}
+#reports:hover > .sidebar__menulist__menu-mask, #dir2:hover > .sidebar__menulist__menu-mask {
+  /* FIXME: use js to calc height */
+  max-height: 180px;
+}
+.sidebar__menulist__menu-mask {
+  max-height: 0;
+  transition: all linear  0.5s;
+  overflow-y: hidden;
+}
+层层嵌套与样式复用
