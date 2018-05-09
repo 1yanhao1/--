@@ -1,0 +1,6 @@
+1.页面右侧部分为固定宽度，左侧保持与浏览器窗口变化同步自适应变化
+.contentformat{
+  width: calc(100% - 480px);
+	float: left;
+}
+2.clear: both;
