@@ -1,0 +1,47 @@
+1.下划线动态效果:
+<nav>
+           <ul>
+                <li>首页</li>
+                <li>最新活动</li>
+                <li>项目介绍</li>
+                <li>爱心社区</li>
+                <li>关于我们</li>
+                <li class="move"></li>
+          </ul>
+ </nav>
+header nav ul .move{
+    position: absolute;
+    border-top: 4px solid #E53C3C;
+    left: 0;
+    top: 55px;
+    -webkit-transition: left 0.4s ease-in-out;
+    -moz-transition: left 0.4s ease-in-out;
+    transition: left 0.4s ease-in-out;
+   
+}
+header nav ul li:nth-child(1):hover~.move{
+    left: 0;
+}
+header nav ul li:nth-child(2):hover~.move{
+    left: 20%;
+}
+header nav ul li:nth-child(3):hover~.move{
+    left: 40%;
+}
+header nav ul li:nth-child(4):hover~.move{
+    left: 60%;
+}
+header nav ul li:nth-child(5):hover~.move{
+    left: 80%;
+}
+2.三角
+#section-6 .left::after{
+    content: '';
+    position: absolute;
+    border-width: 30px;
+    border-style: solid;
+    border-color: transparent rgb(207, 17, 17) transparent transparent;
+    top: 250px;
+    left: 100%;
+    margin-left: -60px;
+}
